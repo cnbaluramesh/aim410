@@ -136,8 +136,8 @@ if __name__ == '__main__':
     #                verbose=1)
     
     # Only needed because of the BatchNormalization layer
-    sess = tf.Session()
-    sess.run(tf.local_variables_initializer())  
+    sess = tf.compat.v1.Session()
+    sess.run(tf.compat.v1.local_variables_initializer())  
     
     model.fit(x_train, y_train, batch_size=batch_size,
                     validation_data=(x_val, y_val), 
